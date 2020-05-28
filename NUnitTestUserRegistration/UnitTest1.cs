@@ -199,5 +199,21 @@ namespace NUnitTestUserRegistration
             bool result = validator.ValidatePassword("mehboob1234");
             Assert.False(result);
         }
+
+        [Test]
+        public void When_GivenPassword_IfContainsAtLeastOneNumericNumber_ShouldReturnTrue()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword("Mehboob1234A");
+            Assert.True(result);
+        }
+
+        [Test]
+        public void When_GivenPassword_IfNotContainsNumericNumber_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword("MehboobavcsA");
+            Assert.False(result);
+        }
     }
 }
