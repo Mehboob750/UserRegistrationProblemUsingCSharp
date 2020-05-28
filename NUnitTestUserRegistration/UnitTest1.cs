@@ -73,5 +73,36 @@ namespace NUnitTestUserRegistration
             bool result = validator.ValidateName("shaikh");
             Assert.False(result);
         }
+
+        [Test]
+        public void When_GivenEmailId_IfValid_ShouldReturnTrue()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateEmailId("mehboob@gmail.com");
+            Assert.True(result);
+        }
+
+        [Test]
+        public void When_GivenEmailId_IfNotValid_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateEmailId("@gmail.com");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenEmailId_IfEmpty_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateEmailId(" ");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenEmailId_IfNull_ShouldThrowException()
+        {
+            UserValidator validator = new UserValidator();
+            validator.ValidateEmailId(null);
+        }
     }
 }
