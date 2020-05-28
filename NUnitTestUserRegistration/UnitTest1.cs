@@ -151,5 +151,37 @@ namespace NUnitTestUserRegistration
             UserValidator validator = new UserValidator();
             validator.ValidateMobileNumber(null);
         }
+
+        [Test]
+        public void When_GivenPassword_IfGreaterThan7_ShouldReturnTrue()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword("Mehboob1234");
+            Assert.True(result);
+        }
+
+        [Test]
+        public void When_GivenPassword_IfLessThan8_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword("NH14");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenPassword_IfEmpty_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword(" ");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenPassword_IfNull_ShouldThrowException()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword(null);
+            Assert.False(result);
+        }
     }
 }
