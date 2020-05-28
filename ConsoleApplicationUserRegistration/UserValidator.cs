@@ -8,7 +8,7 @@ namespace ConsoleApplicationUserRegistration
     public class UserValidator
     {
        private readonly static String NAME_PATTERN ="^[A-Z]{1}[a-z]{2,}$";
-        public bool ValidateFirstName(string firstName)
+        public bool ValidateName(string firstName)
         {
             try
             {
