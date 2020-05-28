@@ -104,5 +104,52 @@ namespace NUnitTestUserRegistration
             UserValidator validator = new UserValidator();
             validator.ValidateEmailId(null);
         }
+
+        [Test]
+        public void When_GivenMobileNumber_IfValid_ShouldReturnTrue()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateMobileNumber("9854783212");
+            Assert.True(result);
+        }
+
+        [Test]
+        public void When_GivenMobileNumber_IfLessThan10_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateMobileNumber("854783212");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenMobileNumberWithCountryCode_IfValid_ShouldReturnTrue()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateMobileNumber("91 9854783212");
+            Assert.True(result);
+        }
+
+        [Test]
+        public void When_GivenMobileNumberWithCountryCode_IfSpaceNotGiven_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateMobileNumber("919854783212");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenMobileNumber_IfEmpty_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidateMobileNumber(" ");
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenMobileNumber_IfNull_ShouldThrowException()
+        {
+            UserValidator validator = new UserValidator();
+            validator.ValidateMobileNumber(null);
+        }
     }
 }
