@@ -10,7 +10,7 @@ namespace ConsoleApplicationUserRegistration
        private readonly static String NAME_PATTERN ="^[A-Z]{1}[a-z]{2,}$";
        private readonly static String EMAIL_PATTERN = "^[0-9a-zA-Z]+([._+-][0-9a-zA-Z]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2,3})?$";
        private readonly static String MOBILE_PATTERN = "^([0-9]{2}[ ])?([1-9]{1}[0-9]{9})$";
-       private readonly static String PASSWORD_PATTERN = "^[A-Za-z0-9]{8,}";
+       private readonly static String PASSWORD_PATTERN = "((?=.+[a-z])(?=.+[A-Z]).{8,})";
         public bool ValidateName(string firstName)
         {
             try

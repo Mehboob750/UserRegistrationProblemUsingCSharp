@@ -156,7 +156,7 @@ namespace NUnitTestUserRegistration
         public void When_GivenPassword_IfGreaterThan7_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
-            bool result = validator.ValidatePassword("Mehboob1234");
+            bool result = validator.ValidatePassword("Mehboob1234A");
             Assert.True(result);
         }
 
@@ -181,6 +181,22 @@ namespace NUnitTestUserRegistration
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword(null);
+            Assert.False(result);
+        }
+
+        [Test]
+        public void When_GivenPassword_IfContainsAtLeastOneUpperCaseCharacter_ShouldReturnTrue()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword("Mehboob1234A");
+            Assert.True(result);
+        }
+
+        [Test]
+        public void When_GivenPassword_IfNotContainsUpperCaseCharacter_ShouldReturnFalse()
+        {
+            UserValidator validator = new UserValidator();
+            bool result = validator.ValidatePassword("mehboob1234");
             Assert.False(result);
         }
     }
