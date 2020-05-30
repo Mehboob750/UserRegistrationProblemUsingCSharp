@@ -12,7 +12,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenFirstName_IfProper_ShouldReturnTrue()
+        public void GivenFirstName_WhenProper_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("Mehboob");
@@ -20,7 +20,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenFirstName_IfNotProper_ShouldReturnFalse()
+        public void GivenFirstName_WhenNotProper_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("mehboob");
@@ -28,7 +28,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenFirstName_IfSizeGreaterThanThree_ShouldReturnTrue()
+        public void GivenFirstName_WhenSizeGreaterThanThree_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("Mehb");
@@ -36,7 +36,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenFirstName_IfSizeLessThanThree_ShouldReturnFalse()
+        public void GivenFirstName_WhenSizeLessThanThree_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("Me");
@@ -44,7 +44,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenFirstName_IfEmpty_ShouldReturnFalse()
+        public void GivenFirstName_WhenEmpty_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("");
@@ -52,14 +52,14 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenFirstName_IfNull_ShouldThrowException()
+        public void GivenFirstName_WhenNull_ShouldThrowException()
         {
             UserValidator validator = new UserValidator();
             validator.ValidateName(null);
         }
 
         [Test]
-        public void When_GivenLastName_IfProper_ShouldReturnTrue()
+        public void GivenLastName_WhenProper_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("Shaikh");
@@ -67,7 +67,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenLastName_IfNotProper_ShouldReturnFalse()
+        public void GivenLastName_WhenNotProper_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateName("shaikh");
@@ -75,7 +75,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenEmailId_IfValid_ShouldReturnTrue()
+        public void GivenEmailId_WhenValid_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateEmailId("mehboob@gmail.com");
@@ -83,7 +83,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenEmailId_IfNotValid_ShouldReturnFalse()
+        public void GivenEmailId_WhenNotValid_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateEmailId("@gmail.com");
@@ -91,7 +91,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenEmailId_IfEmpty_ShouldReturnFalse()
+        public void GivenEmailId_WhenEmpty_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateEmailId(" ");
@@ -99,14 +99,14 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenEmailId_IfNull_ShouldThrowException()
+        public void GivenEmailId_WhenNull_ShouldThrowException()
         {
             UserValidator validator = new UserValidator();
             validator.ValidateEmailId(null);
         }
 
         [Test]
-        public void When_GivenMobileNumber_IfValid_ShouldReturnTrue()
+        public void GivenMobileNumber_WhenValid_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateMobileNumber("9854783212");
@@ -114,7 +114,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenMobileNumber_IfLessThan10_ShouldReturnFalse()
+        public void GivenMobileNumber_WhenLessThan10_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateMobileNumber("854783212");
@@ -122,7 +122,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenMobileNumberWithCountryCode_IfValid_ShouldReturnTrue()
+        public void GivenMobileNumberWithCountryCode_WhenValid_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateMobileNumber("91 9854783212");
@@ -130,7 +130,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenMobileNumberWithCountryCode_IfSpaceNotGiven_ShouldReturnFalse()
+        public void GivenMobileNumberWithCountryCode_WhenSpaceNotGiven_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateMobileNumber("919854783212");
@@ -138,7 +138,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenMobileNumber_IfEmpty_ShouldReturnFalse()
+        public void GivenMobileNumber_WhenEmpty_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidateMobileNumber(" ");
@@ -146,14 +146,14 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenMobileNumber_IfNull_ShouldThrowException()
+        public void GivenMobileNumber_WhenNull_ShouldThrowException()
         {
             UserValidator validator = new UserValidator();
             validator.ValidateMobileNumber(null);
         }
 
         [Test]
-        public void When_GivenPassword_IfGreaterThan7_ShouldReturnTrue()
+        public void GivenPassword_WhenGreaterThan7_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("Mehboob1234A");
@@ -161,7 +161,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfLessThan8_ShouldReturnFalse()
+        public void GivenPassword_WhenLessThan8_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("NH14");
@@ -169,7 +169,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfEmpty_ShouldReturnFalse()
+        public void GivenPassword_WhenEmpty_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword(" ");
@@ -177,7 +177,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfNull_ShouldThrowException()
+        public void GivenPassword_WhenNull_ShouldThrowException()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword(null);
@@ -185,7 +185,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfContainsAtLeastOneUpperCaseCharacter_ShouldReturnTrue()
+        public void GivenPassword_WhenContainsAtLeastOneUpperCaseCharacter_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("Mehboob1234A");
@@ -193,7 +193,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfNotContainsUpperCaseCharacter_ShouldReturnFalse()
+        public void GivenPassword_WhenNotContainsUpperCaseCharacter_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("mehboob1234");
@@ -201,7 +201,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfContainsAtLeastOneNumericNumber_ShouldReturnTrue()
+        public void GivenPassword_WhenContainsAtLeastOneNumericNumber_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("Mehboob1234A");
@@ -209,7 +209,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfNotContainsNumericNumber_ShouldReturnFalse()
+        public void GivenPassword_WhenNotContainsNumericNumber_ShouldReturnFalse()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("MehboobavcsA");
@@ -217,7 +217,7 @@ namespace NUnitTestUserRegistration
         }
 
         [Test]
-        public void When_GivenPassword_IfContainsOnlyOneSpecialCharacter_ShouldReturnTrue()
+        public void GivenPassword_WhenContainsOnlyOneSpecialCharacter_ShouldReturnTrue()
         {
             UserValidator validator = new UserValidator();
             bool result = validator.ValidatePassword("Mehboob@1234A");

@@ -43,7 +43,7 @@ namespace ConsoleApplicationUserRegistration
             }
             catch (Exception e)
             {
-
+                Console.WriteLine("Field Should Not Be Empty", e.Message);
             }
             return false;
         }
